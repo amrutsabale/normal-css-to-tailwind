@@ -1,0 +1,16 @@
+{
+  "name": "TailwindCSS Class Converter",
+  "description": "Convert CSS class into TailwindCSS class",
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "icons": {
+    "128": "images/logo.png",
+    "48": "images/logo.png",
+    "16": "images/logo.png"
+  },
+  "background": {},
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_popup": "popup.html"
+  }
+}
