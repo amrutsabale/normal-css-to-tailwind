@@ -1,12 +1,5 @@
 .main {
   width: 400px;
-  height: 400px;
-}
-
-button {
-  padding: 6px;
-  background-color: skyblue;
-  color: black;
-  border: 1px solid;
-  border: radius 6px;
+  height: 300px;
+  font-family: cursive;
 }
