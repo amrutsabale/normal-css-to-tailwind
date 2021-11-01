@@ -10,14 +10,23 @@ const TAILWIND_CSS_MAP = {
 convertButton.addEventListener("click", (e) => {
   e.preventDefault();
   const cssClassInputVal = removeExtraSpacesFromInput(cssClassInput.value);
+  const cssClassInputError = document.querySelector("#cssClassInputError");
 
   if (cssClassInputVal === "") {
-    alert("Please Enter CSS class");
+    cssClassInput.classList.add("border-red-500");
+    cssClassInputError.innerText = "Please Enter valid CSS class.";
   } else {
     const convertedTailwindClass =
       convertCSSClassIntoTailwind(cssClassInputVal);
 
     displayConvertedTailwindCSSClass(convertedTailwindClass);
+  }
+});
+
+cssClassInput.addEventListener("input", (e) => {
+  if (e.target.value !== "") {
+    cssClassInput.classList.remove("border-red-500");
+    cssClassInputError.innerText = "";
   }
 });
 
@@ -37,6 +46,7 @@ const convertCSSClassIntoTailwind = (cssClassInputVal) => {
 
 const displayConvertedTailwindCSSClass = (convertedTailwindClass) => {
   const outputClassContainer = document.querySelector("#outputClassContainer");
+  outputClassContainer.classList.remove("hidden");
   if (!convertedTailwindClass) {
     outputClassContainer.innerText = "No class found. Please send it to us.";
   } else {

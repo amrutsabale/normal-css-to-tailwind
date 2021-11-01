@@ -1,31 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/tailwind.min.css" />
     <link rel="stylesheet" href="styles/popup.css" />
     <title>Document</title>
-</head>
-<body class="main">
-     <form class="flex justify-center align-center">
-
-        <div class="col-span-6 sm:col-span-3">
-             <input type="text"  name="cssClassInput" id="cssClassInput" placeholder="Enter Normal CSS class..."
-             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>        
+  </head>
+  <body class="main">
+    <div class="w-full h-screen shadow-md">
+      <h1 class="mb-2 pt-4 text-center text-xl text-blue-500 font-bold">
+        Normal CSS to Tailwind
+      </h1>
+      <form class="bg-white rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-6">
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-base text-gray-700
+              mb-3
+              leading-tight
+              focus:outline-none focus:ring focus:border-blue-300
+            "
+            type="search"
+            name="cssClassInput"
+            id="cssClassInput"
+            placeholder="Enter Normal CSS class..."
+          />
+          <p id="cssClassInputError" class="text-red-500 text-xs italic"></p>
         </div>
-     <button
-      id="convertButton"
-       type="submit"
-       class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-       Convert</button>
-     </form>
-
-     <div id="outputClassContainer" class="text-red-200">
-
-     </div>
+        <div class="flex items-center justify-between">
+          <button
+            id="convertButton"
+            class="
+              text-base
+              bg-blue-500
+              hover:bg-blue-700
+              text-white
+              font-bold
+              py-2
+              px-6
+              rounded-full rounded
+              mx-auto
+              focus:outline-none focus:shadow-outline
+            "
+            type="submit"
+          >
+            Convert
+          </button>
+        </div>
+      </form>
+      <div
+        id="outputClassContainer"
+        class="
+          hidden
+          text-center text-lg text-green-500
+          font-bold
+          rounded
+          border border-blue-500
+          py-2
+          px-3
+          mx-6
+          mb-3
+        "
+      ></div>
+    </div>
 
     <script src="./popup.js"></script>
-</body>
+  </body>
 </html>
